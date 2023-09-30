@@ -1,0 +1,87 @@
+:root{
+    --first:#3F0071;
+    --second:#FB2576;
+    --third:#332FD0;
+    --forth:#0002A1;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(45deg, var(--second), var(--forth));
+
+}
+.code-editor{
+    width: 90vw;
+    height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 1rem;
+    background-color: #fff;
+    overflow: hidden
+}
+.code{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    border-radius: 0 1rem 1rem 0;
+    overflow-y: auto;
+    background-color: var(--first);
+    padding: 1rem;
+}
+h1{
+    font: 600 1rem sans-serif;
+    margin: 1rem 0;
+    color: #fff;
+}
+h1 > img{
+    margin-right: 1rem ;
+    vertical-align: middle;
+    width: 1.5rem;
+}
+.code textarea{
+    height: calc(100% - 4rem);
+    width: 100%;
+    resize: vertical;
+    border: none;
+    background-color: var(--third);
+    padding: 1rem;
+    color: #fff;
+    font-size: 1.2rem;
+}
+.code textarea::-webkit-scrollbar{
+    width: .5rem;
+}
+.code textarea::-webkit-scrollbar-thumb{
+    border-radius: .4rem;
+    background-color: var(--second);
+}
+#result{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+@media (max-width:900px){
+    body{
+        height: 110vh;    
+    }
+    .code-editor{
+        grid-template-columns: repeat(1, 1fr);
+        width: 90vw;
+        height: 100vh;
+    }
+    h1{
+        font: 600 .8rem sans-serif;
+    }
+    .code textarea{
+        font-size: .9rem;
+    }
+    .code textarea::-webkit-scrollbar{
+        width: .2rem;
+    }
+}
